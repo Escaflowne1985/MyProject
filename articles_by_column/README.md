@@ -1,13 +1,4 @@
-# Learning-Notes-and-Projects
- 主要内容是我的各种学习笔记和应用案例。
-
-
-
-欢迎来到这一全方位的Python技术探索之旅！无论你是初学者，还是资深开发者，这里都有你想要的。从[Python学习杂谈](./articles_by_column/01.Python 学习杂谈.md)开始，我们将带你了解Python的软件环境，编程基础，数据处理，网络爬虫技术，直至Web开发、数据分析、可视化、视频剪辑、AI技术、自然语言处理、音频技术、计算机视觉等前沿领域。
-
-不仅如此，我们还为你准备了实用程序、数据分析案例，以及最新的Stable Diffusion AI绘画技术。每一篇内容都是精心准备，旨在为你提供最实用、最深入的技术解读。
-
-点击上方的链接，开启你的Python学习之旅，探索无穷的技术魅力！
+# 专栏汇总索引
 
 | 编号 | 专栏名称 | 阅读链接 |
 | ---- | -------- | -------- |
@@ -30,19 +21,3 @@
 | 17 | Python 机器学习 | [查看](./articles_by_column/17.Python 机器学习.md) |
 | 18 | Stable Diffusion AI绘画 | [查看](./articles_by_column/18.Stable Diffusion AI绘画.md) |
 | 19 | AIGC工具箱 | [查看](./articles_by_column/19.AIGC工具箱.md) |
-
-我的一些工作成绩
-
-**发明专利**
-
-![发明专利](./My Certificate/发明专利/《数据分析的学习和使用方法、装置及计算机可读存储介质》/1707228949293.jpg)
-![发明专利](./My Certificate/发明专利/《数据分析的学习和使用方法、装置及计算机可读存储介质》/1707228960710.jpg)
-
-**软件著作**
-
-![软件著作](./My Certificate/软件著作/NovelAI文生图，视频克隆自动生成软件.jpg)
-
-
-欢迎加入QQ组织学习和讨论，如果觉得我的内容对你有帮助的话欢迎打赏，感谢支持！！！
-
-![img](https://m.qpic.cn/psc?/V13uuYuJ2n1EXp/6tCTPh7N*X6CBkvkDvKlZS*QDbyoiOzUUh1BXihc7CDPHuTE7WbvFw*NsVJ3bQkIb7HyWsr4OzWTpFVUdUgtxMsMqydXhtDZ9p3nH03AsuA!/b&bo=CQSsAgAAAAABB4M!&rf=viewer_4)

@@ -43,29 +43,43 @@ for column_name, group_df in df_clean.groupby('文章专栏'):
 
             
             
+import pandas as pd
+import os
 import re
+from urllib.parse import quote  # ✅ 用于路径中的空格和特殊字符转义
 
-# 筛选匹配“01.专栏名.md”格式的文件
+# 读取原始表格，获取所有专栏
+df = pd.read_excel("menu.xlsx")
+columns_all = df['文章专栏'].dropna().unique()
+
+# 扫描输出目录中所有合规命名的 Markdown 文件
+output_dir = "articles_by_column"
 pattern = re.compile(r'^(\d{2})\.(.+)\.md$')
-index_data = []
+valid_files = {}
 
-for file in sorted(os.listdir(output_dir)):
+for file in os.listdir(output_dir):
     match = pattern.match(file)
     if match:
         index, column_title = match.groups()
-        relative_path = f"./articles_by_column/{file}"  # 用于项目根目录跳转
-        index_data.append((index, column_title, relative_path))
+        safe_path = quote(f"./{output_dir}/{file}")  # ✅ 路径转义处理
+        valid_files[column_title.strip()] = (index, safe_path)
 
-# 构建 Markdown 表格索引
-index_md = "| 编号 | 专栏名称 | 阅读链接 |\n"
+# 生成 README 表格
+index_md = "# 专栏汇总索引\n\n"
+index_md += "| 编号 | 专栏名称 | 阅读链接 |\n"
 index_md += "| ---- | -------- | -------- |\n"
-for idx, title, path in index_data:
-    index_md += f"| {idx} | {title} | [查看]({path}) |\n"
+
+for i, col in enumerate(columns_all, start=1):
+    col = col.strip()
+    if col in valid_files:
+        index, path = valid_files[col]
+        index_md += f"| {index} | {col} | [查看]({path}) |\n"
+    else:
+        index_md += f"| {i:02d} | {col} | 查看 |\n"
 
 # 写入 README.md
 readme_path = os.path.join(output_dir, "README.md")
 with open(readme_path, 'w', encoding='utf-8') as f:
-    f.write("# 专栏汇总索引\n\n")
     f.write(index_md)
 
-readme_path
+print(f"✅ README 生成完毕：{readme_path}")
